@@ -21,8 +21,18 @@ public class Program2 {
 		
 		System.out.println("=== Test 3 : Insert ===");
 		dep = new Department(null, "Food");
-		departmentDao.insert(dep);
+		//departmentDao.insert(dep);
 		System.out.println("ID: " + dep.getId());
+		
+		System.out.println("=== Test 4 : Update ===");
+		dep = departmentDao.findById(8);
+		dep.setName("Tools");
+		departmentDao.update(dep);
+		System.out.println("Update completed!");
+		
+		System.out.println("=== Test 5 : Delete ===");
+		departmentDao.deleteById(6);
+		System.out.println("Delete completed!");
 
 	}
 
